@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles.css" type="html/css">
+  <script src="https://use.fontawesome.com/d945602960.js"></script>
+  <style>
+    body {
+      background-color: #DFE2DB;
+      color: #191919;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <form action="/api/friends" method="post">
+    <!-- Bee Icon Provided By: Aref hosseini -->
+    <h2>Survey Questions</h2>
+    <hr>
+    <h3>About You</h3>
+    <h4>Name (Required)</h4>
+    <input type="text" name="name" class="form-control">
+
+    <h4>Link to Glamour Shot</h4>
+    <input type="text" name="photo" class="form-control">
+    <hr>
+
+    <h3>Question 1</h3>
+    <h4>You enjoy "chilling out" and doing nothing.</h4>
+    <select class="form-control" name="q1" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 2</h3>
+    <h4>You strive to live an active, healthy lifestyle.</h4>
+    <select class="form-control" name="q2" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 3</h3>
+    <h4>You care more about intelligence than good looks.</h4>
+    <select class="form-control" name="q3" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 4</h3>
+    <h4>You need some "alone time" every day.</h4>
+    <select class="form-control" name="q4" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 5</h3>
+    <h4>You'd rather read a book than watch a TV show or a movie.</h4>
+    <select class="form-control" name="q5" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 6</h3>
+    <h4>You think Hilary Clinton is a safer bet than Donald Trump.</h4>
+    <select class="form-control" name="q6" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 7</h3>
+    <h4>You are afraid of dying without having contributed to the good of the world.</h4>
+    <select class="form-control" name="q7" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 8</h3>
+    <h4>New people make you anxious or uncomfortable.</h4>
+    <select class="form-control" name="q8" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 9</h3>
+    <h4>You think technology is generally a positive thing.</h4>
+    <select class="form-control" name="q9" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h3>Question 10</h3>
+    <h4>You like to keep to yourself about personal opinions.</h4>
+    <select class="form-control" name="q10" placeholder="Select an Option" style="width: auto">
+      <option value="0">Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" type="submit"><i class="fa fa-paper-plane"></i> Submit</button>
+    <hr>
+  </form>
+  <a href="/api/friends">API Friends List</a>
+  <br>
+</div>
+</body>
+</html>
