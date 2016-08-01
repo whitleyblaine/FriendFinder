@@ -38,6 +38,22 @@ var friends = [
       "3",
       "2"
     ]
+  },
+  {
+    name: "Tito Bo Hemian",
+    photo: "https://pbs.twimg.com/profile_images/83682624/TitoColore.JPG",
+    scores: [
+      "5",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "5",
+      "1"
+    ]
   }
 ];
 
