@@ -24,7 +24,7 @@ app.listen(PORT, function() {
 var friends = [
 
   {
-    name: "Whitley Example",
+    name: "Whitley Blaine",
     photo: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12994575_221772898190563_919417995338863377_n.jpg?oh=fdf78295b001a89511f675df5c83c905&oe=58149CCD",
     scores: [
       "1",
@@ -53,7 +53,10 @@ app.get('/api/friends', function(req, res) {
 })
 
 app.post('/api/friends', function(req, res) {
-  var newFriend = req.body;
+  var newFriend = {};
+  newFriend.name = req.body.name;
+  newFriend.photo = req.body.photo;
+  newFriend.scores = [req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6, req.body.q7, req.body.q8, req.body.q9, req.body.q10];
   friends.push(newFriend);
   res.json(friends);
 })
@@ -61,4 +64,3 @@ app.post('/api/friends', function(req, res) {
 app.use('/', function(req, res){
   res.sendFile(path.join(__dirname, 'app/public/home.html'));
 })
-
