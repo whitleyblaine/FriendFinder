@@ -73,8 +73,43 @@ app.post('/api/friends', function(req, res) {
   newFriend.name = req.body.name;
   newFriend.photo = req.body.photo;
   newFriend.scores = [req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6, req.body.q7, req.body.q8, req.body.q9, req.body.q10];
-  friends.push(newFriend);
-  res.json(friends);
+
+  // Calculate difference
+  var differencesArr = [];
+  var otherUser;
+  var totalDifference;
+  for (var i=0; i < friends.length; i++) {
+    otherUser = friends[i];
+    totalDifference = 0;
+    for (var j = 0; j < otherUser.scores.length; j++) {
+      var difference = Math.abs((parseInt(otherUser.scores[j]) - parseInt(newFriend.scores[j])));
+      totalDifference += difference;
+    };
+    console.log('total difference: ' + totalDifference);
+    differencesArr.push(totalDifference);
+    console.log('differences array: ' + differencesArr);
+  }
+  // Compare
+  var smallestDiff;
+  var smallestDiffIndex;
+  for (var i=0; i < differencesArr.length; i++) {
+    if (i == 0) {
+      smallestDiff = parseInt(differencesArr[i]);
+      smallestDiffIndex = i;
+    } else {
+      if (parseInt(differencesArr[i]) < smallestDiff) {
+        smallestDiff = parseInt(differencesArr[i]);
+        smallestDiffIndex = i;
+      }
+    };
+  }
+
+  console.log(smallestDiff);
+  console.log(smallestDiffIndex);
+  // Push to array
+  if (newFriend.scores.indexOf("0") < 0 && newFriend.scores.indexOf(0) < 0) {
+    friends.push(newFriend);
+  }
 })
 
 app.use('/', function(req, res){
