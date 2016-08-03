@@ -54,7 +54,7 @@ var friends = [
       "5",
       "1"
     ]
-  }
+  },
 ];
 
 // HTML Routes
@@ -74,6 +74,8 @@ app.post('/api/friends', function(req, res) {
   newFriend.photo = req.body.photo;
   newFriend.scores = [req.body.q1, req.body.q2, req.body.q3, req.body.q4, req.body.q5, req.body.q6, req.body.q7, req.body.q8, req.body.q9, req.body.q10];
 
+  console.log(req.body);
+
   // Calculate difference
   var differencesArr = [];
   var otherUser;
@@ -85,9 +87,9 @@ app.post('/api/friends', function(req, res) {
       var difference = Math.abs((parseInt(otherUser.scores[j]) - parseInt(newFriend.scores[j])));
       totalDifference += difference;
     };
-    console.log('total difference: ' + totalDifference);
+    // console.log('total difference: ' + totalDifference);
     differencesArr.push(totalDifference);
-    console.log('differences array: ' + differencesArr);
+    // console.log('differences array: ' + differencesArr);
   }
   // Compare
   var smallestDiff;
@@ -104,12 +106,29 @@ app.post('/api/friends', function(req, res) {
     };
   }
 
-  console.log(smallestDiff);
-  console.log(smallestDiffIndex);
+  // console.log(smallestDiff);
+  // console.log(smallestDiffIndex);
   // Push to array
-  if (newFriend.scores.indexOf("0") < 0 && newFriend.scores.indexOf(0) < 0) {
+  if (newFriend.name.length > 2 && newFriend.photo.length > 2 && newFriend.scores.indexOf("0") < 0 && newFriend.scores.indexOf(0) < 0) {
     friends.push(newFriend);
-  }
+    res.json(friends[smallestDiffIndex]);
+    console.log(res);
+  } else {
+    res.json({
+    scores: [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  })
+  };
 })
 
 app.use('/', function(req, res){
