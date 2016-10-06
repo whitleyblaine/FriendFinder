@@ -25,7 +25,7 @@ var friends = [
 
   {
     name: "Whitley Blaine",
-    photo: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12994575_221772898190563_919417995338863377_n.jpg?oh=fdf78295b001a89511f675df5c83c905&oe=58149CCD",
+    photo: "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14440950_306137739754078_7138612908098277376_n.jpg?oh=1710eacff0d6cae392e399c2fcc21f9a&oe=586A9492",
     scores: [
       "1",
       "5",
